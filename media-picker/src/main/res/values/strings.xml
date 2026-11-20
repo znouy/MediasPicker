@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">WeChat Picker</string>
+    <string name="all_media">图片和视频</string>
+    <string name="preview">预览</string>
+    <string name="preview_with_count">预览 (%1$d)</string>
+    <string name="send">发送</string>
+    <string name="send_with_count">发送 (%1$d/%2$d)</string>
+    <string name="original_image">原图</string>
+    <string name="original_image_with_size">原图 (%1$s)</string>
+    <string name="cancel">取消</string>
+    <string name="done">完成</string>
+    <string name="edit">编辑</string>
+    <string name="album_all">所有照片</string>
+    <string name="album_camera">相机胶卷</string>
+    <string name="album_screenshots">截屏录屏</string>
+    <string name="album_wechat">微信</string>
+    <string name="max_selection_toast">最多只能选择 %1$d 张照片</string>
+    <string name="permission_title">需要相册访问权限</string>
+    <string name="permission_desc">为了查看并选择手机内的照片与视频，请授予读取媒体文件的权限。</string>
+    <string name="grant_permission">去授权</string>
+    <string name="generate_samples">生成测试图库 (100+张)</string>
+    <string name="clear_samples">重置图库</string>
+    <string name="memory_monitor_title">内存监测 (合理区间: 15~35MB)</string>
+    <string name="memory_status_healthy">内存平稳 (LRU精准控制)</string>
+    <string name="fast_scroll_tip">请尽情快速上下滑动，验证内存始终稳定在合理区间且零OOM</string>
+</resources>

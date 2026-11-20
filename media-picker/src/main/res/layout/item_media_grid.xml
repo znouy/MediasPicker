@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/wechat_dark_bg">
+
+    <!-- Square Image Container -->
+    <ImageView
+        android:id="@+id/ivThumbnail"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="照片缩略图"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="#333333" />
+
+    <!-- Selection / Pressed Dark Mask -->
+    <View
+        android:id="@+id/viewMask"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/wechat_item_mask"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/ivThumbnail"
+        app:layout_constraintEnd_toEndOf="@id/ivThumbnail"
+        app:layout_constraintStart_toStartOf="@id/ivThumbnail"
+        app:layout_constraintTop_toTopOf="@id/ivThumbnail"
+        tools:visibility="visible" />
+
+    <!-- WeChat-style Checkbox Touch Target (Minimum 48dp for accessibility) -->
+    <FrameLayout
+        android:id="@+id/layoutCheck"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:contentDescription="选择照片"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Unselected Circle (White stroke) -->
+        <View
+            android:id="@+id/viewUnselectedCircle"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/bg_wechat_checkbox_unselected" />
+
+        <!-- Selected Badge (WeChat Emerald Green with number) -->
+        <TextView
+            android:id="@+id/tvSelectIndex"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/bg_wechat_checkbox_selected"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="1"
+            tools:visibility="visible" />
+    </FrameLayout>
+
+    <!-- Video Indicator & Duration -->
+    <LinearLayout
+        android:id="@+id/layoutVideoInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible">
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:contentDescription="视频"
+            android:src="@drawable/ic_video_indicator" />
+
+        <TextView
+            android:id="@+id/tvDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            tools:text="00:15" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

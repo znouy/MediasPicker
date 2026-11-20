@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:background="?android:attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+    <ImageView
+        android:id="@+id/ivAlbumCover"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:contentDescription="相册封面"
+        android:scaleType="centerCrop"
+        tools:background="#444444" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvAlbumName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/wechat_text_primary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="图片和视频" />
+
+        <TextView
+            android:id="@+id/tvAlbumCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/wechat_text_secondary"
+            android:textSize="13sp"
+            tools:text="1,248" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivAlbumSelectedCheck"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:contentDescription="已选相册"
+        android:src="@drawable/ic_video_indicator"
+        android:visibility="gone"
+        tools:visibility="visible" />
+</LinearLayout>

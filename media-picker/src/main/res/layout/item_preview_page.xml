@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+    <!-- 修复：使用 AspectRatioFrameLayout 包裹 TextureView，居中自适应比例！ -->
+    <androidx.media3.ui.AspectRatioFrameLayout
+        android:id="@+id/videoFrameContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:resize_mode="fit">
+        <!-- 视频渲染层：选用 TextureView 支持平滑渐变与手势移动（默认 GONE） -->
+        <TextureView
+            android:id="@+id/videoTextureView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.media3.ui.AspectRatioFrameLayout>
+    <!-- 普通高清图支持手势缩放的控件（业界标杆 PhotoView 或自研手势控件） -->
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/photoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" />
+
+    <!-- 针对极端超大图/超长图的切片渲染控件（支持 BitmapRegionDecoder 瓦片加载） -->
+    <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
+        android:id="@+id/subsamplingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <!-- 动效微图（先铺底防白块，大图加载成功后淡出消失,为视频时则为未播放时的封面） -->
+    <ImageView
+        android:id="@+id/ivPlaceholderThumb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter" />
+    <!-- 播放/暂停图标（仅在是视频时可见） -->
+    <ImageView
+        android:id="@+id/ivPlayCenter"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_circle_play_translucent"
+        android:padding="16dp"
+        android:src="@drawable/ic_video_play"
+        android:visibility="gone" />
+
+    <!-- 优雅的居中加载转圈（超时兜底展示） -->
+    <ProgressBar
+        android:id="@+id/loadingBar"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+</FrameLayout>

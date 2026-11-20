@@ -1,0 +1,6 @@
+{
+  "name": "WeChat Picker",
+  "description": "High-performance WeChat-style media picker with zero-lag smooth scrolling, bounded memory management, and modern MVVM ViewBinding architecture.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

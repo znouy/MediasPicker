@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ==================== REAL-TIME MEMORY MONITOR HUD ==================== -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutMemoryHud"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="14dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="14dp"
+    android:background="@drawable/bg_hud_overlay"
+    android:elevation="8dp"
+    android:padding="12dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/layout_top_bar">
+
+    <TextView
+        android:id="@+id/tvHudTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⚡ 微信同款“滑动即出图”与内存平稳监测"
+        android:textColor="#60A5FA"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivCloseHud"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:contentDescription="隐藏HUD"
+        android:padding="2dp"
+        android:rotation="90"
+        android:src="@drawable/ic_back_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvHeapInfo"
+        tools:text="堆内存: 24.2 MB (上限: 256 MB) | 缓存: 16.4 MB (82 张)"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHudTitle" />
+
+    <TextView
+        android:id="@+id/tvCacheMetrics"
+        tools:text="缓存命中率: 98% | 状态: 稳态波动区间(18~30MB)，零OOM风险"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textColor="#34D399"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeapInfo" />
+
+    <TextView
+        android:id="@+id/tvTechPillars"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="架构核心: 动态LRU严格截断 + BitmapPool复用(inBitmap) + 降采样RGB_565 + 快速滑出即时Cancel"
+        android:textColor="@color/wechat_text_secondary"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCacheMetrics" />
+</androidx.constraintlayout.widget.ConstraintLayout>

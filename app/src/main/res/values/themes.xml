@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MediaPicker" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.MediaPicker" parent="Base.Theme.MediaPicker" />
+
+    <!-- 微信头像微圆角样式 -->
+    <style name="AvatarShape">
+        <item name="cornerSize">8dp</item><!--50%圆形头像-->
+        <item name="cornerFamily">rounded</item>
+    </style>
+</resources>
